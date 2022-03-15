@@ -45,7 +45,7 @@ echo '¡Hola 42!'
 Es el momento de ver lo que has hecho
 - Ejecuta tu programa con el comando `bash mas_o_menos.sh`
 
-¡Bien hecho, has hecho tu primer Hola Mundo !
+¡Bien hecho, has hecho $tu primer Hola Mundo !
 
 ## Nivel 1: ¡Juguemos!
 
@@ -75,22 +75,22 @@ Tu archivo es ahora ejecutable, puedes ejecutarlo escribiendo `./mas_o_menos.sh`
 #!/usr/bin/env bash
 
 MENSAJE='¡Hola 42 !'
-echo MENSAJE
+echo $MENSAJE
 ```
 - Guarda y prueba tu programa ejecutando `./mas_o_menos.sh`
 
 ### Habla conmigo
 > Harás que tu programa pueda preguntar algo al usuario y obtener una respuesta
 - Añade una línea al final del archivo: `read ANSWER`
-- Y otra para mostrar la respuesta: `echo RESPUESTA`
+- Y otra para mostrar la respuesta: `echo $RESPUESTA`
 - Tu archivo debería tener este aspecto
 ```bash
 #!/usr/bin/env bash
 
 MENSAJE='¡Hola 42!'
-echo MENSAJE
-leer RESPUESTA
-echo RESPUESTA
+echo $MENSAJE
+read RESPUESTA
+echo $RESPUESTA
 ```
 - ¡Guarda y ejecuta tu programa para probarlo !
 
@@ -108,15 +108,15 @@ else
 fi
 ```
 
-- Guarda y prueba, también puedes eliminar la línea: `echo RESPUESTA`
+- Guarda y prueba, también puedes eliminar la línea: `echo $RESPUESTA`
 
  Tu archivo debería tener el siguiente aspecto
 ```bash
- #!/usr/bin/env bash
+#!/usr/bin/env bash
 
 MENSAJE='¡Hola 42! ¿Cuál es la respuesta?
 
-echo MENSAJE
+echo $MENSAJE
 read RESPUESTA
 
 if [ "$RESPUESTA" = 42 ]
@@ -129,7 +129,7 @@ fi
 
 ### De nuevo
 > Aprenderás a hacer un bucle para no escribir dos veces el mismo trozo de código
-- Añade entre `MENSAJE='¡Hola 42! ¿Cuál es la respuesta?'` y `echo MENSAJE` lo siguiente
+- Añade entre `MENSAJE='¡Hola 42! ¿Cuál es la respuesta?'` y `echo $MENSAJE` lo siguiente
 ```bash
 while true
 do
@@ -142,14 +142,14 @@ Tu archivo debería ser así:
 MENSAJE="¡Hola 42! ¿Cuál es la respuesta?"
 while true
 do
-  echo $Mensaje
-  leer RESPUESTA
+  echo $MENSAJE
+  read RESPUESTA
 
   if [ "$RESPUESTA" = 42 ]
-  entonces
-    echo '¡Bienvenido a 42!'
+  thens
+    echo $'¡Bienvenido a 42!'
   else
-    echo '¡No pasarás!'
+    echo $'¡No pasarás!'
   fi
 done
 ```
@@ -164,16 +164,16 @@ done
 > Implementarás el juego más o menos, el objetivo es encontrar un número oculto en el menor número de intentos posibles
 - Bajo `MENSAJE=`, añade `SECRETO=$(date +%s | rev | cut -c1-2)`
 > Esta línea de comando **mágica** `$(fecha +%s | rev | cut -c1-2)` generará un **número arbitrario entre `00` y `99`** (ambos incluidos), no intentes entenderlo
-- En la línea: `si [ "RESPUESTA" = 42 ]`
+- En la línea: `if [ "$RESPUESTA" = 42 ]`
   - Reemplace `42` por `"$SECRETO"`.
-  - Debería ser como `if [ "RESPUESTA" = "$SECRETO" ]`
+  - Debería ser como `if [ "$RESPUESTA" = "$SECRETO" ]`
 - Sustituye la línea `MENSAJE=...` por `MENSAJE="¡Hola a los 42! ¿Cuál es la respuesta?"`
 - Añadirá una pista:
   - Añade una línea para comprobar si es mayor o menor que el número secreto
-  - Debajo de `echo 'You shall not pass !'`, añade lo siguiente:
+  - Debajo de `echo $'You shall not pass !'`, añade lo siguiente:
 ```bash
-if [ "$SECRETO" -gt "RESPUESTA" ]
-entonces
+if [ "$SECRETO" -gt "$RESPUESTA" ]
+then
 	echo "¡El número secreto es mayor!"
 else
 	echo "¡El número secreto es menor!"
