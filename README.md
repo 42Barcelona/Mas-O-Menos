@@ -15,7 +15,7 @@
 - Pulsa `Command` + `Space`, luego escribe `term` y haz clic en la aplicación que quieras lanzar
 
 Deberías terminar con algo como esto:
-[Esta es una Terminal](./assets/shot_1.png)
+![Esta es una Terminal](./assets/shot_1.png)
 
 
 ### Crear y editar un archivo
@@ -69,7 +69,7 @@ Tu archivo es ahora ejecutable, puedes ejecutarlo escribiendo `./mas_o_menos.sh`
 ### Varaiable
 > Vas a modificar tu archivo, para imprimir en la terminal el contenido de la variable MENSAJE, podrás cambiar el mensaje impreso cambiando el valor de la variable
 - En su fichero, sustituya `'¡Hola 42!'` por `MENSAJE`.
-- Añade una línea justo encima para establecer el valor de la variable MENSAJE: `MESSAJE='¡Hola 42!'`
+- Añade una línea justo encima para establecer el valor de la variable MENSAJE: `MENSAJE='¡Hola 42!'`
 - Su archivo para que coincida con el siguiente:
 ```bash
 #!/usr/bin/env bash
