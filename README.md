@@ -1,249 +1,183 @@
 # 42 Barcelona - Mas O Menos
-> In this tutorial, you'll learn step by step how to do a little game in Shell Script
+> En este tutorial, aprenderás paso a paso a hacer un pequeño juego en Shell Script
 
-## Level 0: *Hello 42 !*
+## Nivel 0: *Hola 42 !*
 
-### Open a Shell
-- Open a terminal on your computer
+### Abrir un Shell
+- Abre un terminal en tu ordenador
 
 #### Linux
-> This step is for Linux users only
-- Press `Ctrl` + `Alt` + `T`
+> Este paso es sólo para usuarios de Linux
+- Pulsa `Ctrl` + `Alt` + `T`
 
 #### MacOS
-> This step is for MacOS users only
-- Press `Command` + `Space`, then type `term` and click on the app you want to launch
+> Este paso es sólo para usuarios de MacOS
+- Pulsa `Command` + `Space`, luego escribe `term` y haz clic en la aplicación que quieras lanzar
 
-You should end up with something like this:
-![This is a Terminal](./assets/shot_1.png)
+Deberías terminar con algo como esto:
+[Esta es una Terminal](./assets/shot_1.png)
 
 
-### Create & Edit a file
-In the terminal, we are using this syntax:
+### Crear y editar un archivo
+En la terminal, usamos esta sintaxis
 ```bash
-command --options arguments
+comando --opciones argumentos
 ```
-- Let's use the command `nano`, which is a basic text editor
-- We will give as arguments the name of the file we want to create `mas_o_menos.sh`
-- The full command line will look like that: `nano mas_o_menos.sh`
-![This is a command line](./assets/shot_2.png)
-- Press `enter` to execute it
+- Vamos a utilizar el comando `nano`, que es un editor de texto básico
+- Daremos como argumentos el nombre del archivo que queremos crear `mas_o_menos.sh`
+- La línea de comandos completa será así `nano mas_o_menos.sh`
+![Esta es una línea de comando](./assets/shot_2.png)
+- Pulsa `enter` para ejecutarlo
 
 ### Use Nano
-- Your file should contain this line, type it:
- ```bash
- echo 'Hello 42 !'
- ```
+- Tu archivo debe contener esta línea, escríbela:
+```bash
+echo '¡Hola 42!'
+```
 
-- Press `Ctrl` + `x` to save your file
-![This is how to save](./assets/shot_3.png)
-- Press `y` to confirm
-![This is how to confirm](./assets/shot_4.png)
-- Press `Enter` to exit
+- Presiona `Ctrl` + `x` para guardar tu archivo
+![Así es como se guarda](./assets/shot_3.png)
+- Pulsa `y` para confirmar
+![Así se confirma](./assets/shot_4.png)
+- Pulse `Enter` para salir
 
-### Run your program
-It's time to see what you did
-- Run your program with the command `bash mas_o_menos.sh`
+### Ejecuta tu programa
+Es el momento de ver lo que has hecho
+- Ejecuta tu programa con el comando `bash mas_o_menos.sh`
 
-Well done, you did your first Hello World !
+¡Bien hecho, has hecho tu primer Hola Mundo !
 
-## Level 1: Let's play !
+## Nivel 1: ¡Juguemos!
 
-### Choose an interpreter
-- Indicate the interpretor to use to execute your script, the first line should be exactly:
+### Elige un intérprete
+- Indica el intérprete a utilizar para ejecutar tu script, la primera línea debe ser exactamente
 `#!/usr/bin/env bash`
- 
- Your file should look like that:
+
+ Tu archivo debe tener el siguiente aspecto
  ```bash
  #!/usr/bin/env bash
 
- echo 'Hello 42 !'
+ echo '¡Hola 42!'
  ```
 
-### It's not a file, it's a program
-- Tell the computer to treat your file as a program by giving execution permission
-- Run `chmod +x mas_o_menos.sh`
+### No es un archivo, es un programa
+- Dile al ordenador que trate tu archivo como un programa dándole permiso de ejecución
+- Ejecuta `chmod +x mas_o_menos.sh`
 
-Your file is now executable, you can run it typing: `./mas_o_menos.sh`
+Tu archivo es ahora ejecutable, puedes ejecutarlo escribiendo `./mas_o_menos.sh`
 
 ### Varaiable
-> You will modify your file, in order to print in the terminal the content of the variable MESSAGE, you will be able to change the message printed by changing the value of the variable
-- In your file, replace `'Hello 42 !'` by `$MESSAGE`
-- Add a line just above to set the value of the variable MESSAGE: `MESSAGE='Hello 42 !'`
-- Your file to match the following:
+> Vas a modificar tu archivo, para imprimir en la terminal el contenido de la variable MENSAJE, podrás cambiar el mensaje impreso cambiando el valor de la variable
+- En su fichero, sustituya `'¡Hola 42!'` por `MENSAJE`.
+- Añade una línea justo encima para establecer el valor de la variable MENSAJE: `MESSAJE='¡Hola 42!'`
+- Su archivo para que coincida con el siguiente:
 ```bash
 #!/usr/bin/env bash
 
-MESSAGE='Hello 42 !'
-echo $MESSAGE
+MENSAJE='¡Hola 42 !'
+echo MENSAJE
 ```
-- Save & test your program by running `./mas_o_menos.sh`
+- Guarda y prueba tu programa ejecutando `./mas_o_menos.sh`
 
-### Talk to me
-> You will make your program able to ask something to the user and get an answer
-- Add a line at the bottom of the file: `read ANSWER`
-- And another one to display the answer: `echo $ANSWER`
-- Your file should look like that:
+### Habla conmigo
+> Harás que tu programa pueda preguntar algo al usuario y obtener una respuesta
+- Añade una línea al final del archivo: `read ANSWER`
+- Y otra para mostrar la respuesta: `echo RESPUESTA`
+- Tu archivo debería tener este aspecto
 ```bash
 #!/usr/bin/env bash
 
-MESSAGE='Hello 42 !'
-echo $MESSAGE
-read ANSWER
-echo $ANSWER
+MESSAGE='¡Hola 42!'
+echo MENSAJE
+leer RESPUESTA
+echo RESPUESTA
 ```
-- Save & run your program to test it !
+- ¡Guarda y ejecuta tu programa para probarlo !
 
-### You shall not pass
-> You will learn how to make your program smart
-- Update the MESSAGE value to ask the age of the user: `echo 'Hello 42 ! What's the answer ?'`
-- Add thoses lines at the bottom of the file to check if the age is equal to 42
-> Be careful about special characters like spaces and the quotes
+### No pasarás
+> Aprenderás a hacer tu programa inteligente
+- Actualiza el valor del MENSAJE para preguntar la edad del usuario: `echo '¡Hola 42! ¿Cuál es la respuesta?
+- Añade estas líneas al final del archivo para comprobar si la edad es igual a 42
+> Ten cuidado con los caracteres especiales como los espacios y las comillas
 ```bash
-if [ "$ANSWER" = 42 ]
-then
-	echo 'Welcome at 42 !'
+if [ "RESPUESTA" = 42 ]
+entonces
+	echo '¡Bienvenido a los 42!'
 else
-	echo 'You shall not pass !'
+	echo '¡No pasarás!'
 fi
 ```
 
-- Save & test, you can also remove the line: `echo $ANSWER`
+- Guarda y prueba, también puedes eliminar la línea: `echo RESPUESTA`
 
- Your file should look like this:
- ```bash
+ Tu archivo debería tener el siguiente aspecto
+```bash
  #!/usr/bin/env bash
 
-MESSAGE='Hello 42 ! What's the answer ?'
+MESSAGE='¡Hola 42! ¿Cuál es la respuesta?
 
-echo $MESSAGE
-read ANSWER
+echo MENSAJE
+read RESPUESTA
 
-if [ "$ANSWER" = 42 ]
-then
-	echo 'Welcome at 42 !'
+if [ "$RESPUESTA" = 42 ]
+entonces
+	echo '¡Bienvenido a 42!'
 else
-	echo 'You shall not pass !'
+	echo '¡No pasarás!'
 fi
 ```
 
-### Again
-> You will learn how to do a loop to not write two times the same piece of code
-- Add between `MESSAGE='Hello 42 ! What's the answer ?'` and `echo $MESSAGE` the following
+### De nuevo
+> Aprenderás a hacer un bucle para no escribir dos veces el mismo trozo de código
+- Añade entre `MESSAGE='¡Hola 42! ¿Cuál es la respuesta?'` y `echo MENSAJE` lo siguiente
 ```bash
 while true
 do
 ```
-- And after the line `fi`, add `done`
-Your file should be like that:
+- Y después de la línea `fi`, añade `done`
+Tu archivo debería ser así:
 ```bash
 #!/usr/bin/env bash
 
-MESSAGE="Hello 42 ! What's the answer ?"
+MESSAGE="¡Hola 42! ¿Cuál es la respuesta?"
 while true
-do
-  echo $MESSAGE
-  read ANSWER
+hacer
+  echo $Mensaje
+  leer RESPUESTA
 
-  if [ "$ANSWER" = 42 ]
-  then
-    echo 'Welcome at 42 !'
+  if [ "RESPUESTA" = 42 ]
+  entonces
+    echo '¡Bienvenido a 42!'
   else
-    echo 'You shall not pass !'
+    echo '¡No pasarás!'
   fi
-done
+hecho
 ```
 
-- Run your program to test it, press `Ctrl` & `C` to quit
+- Ejecuta tu programa para probarlo, pulsa `Ctrl` y `C` para salir
 
-### The end
-> Add an exit to your program
-- Between the line `echo 'Welcome at 42 !'` and the line `else` add `exit 0`
+### El final
+> Añade una salida a tu programa
+- Entre la línea `echo '¡Bienvenido al 42!'` y la línea `else` añade `exit 0`
 
-### Mas O Menos
-> You will implement the game plus or minus, the goal is to find a hidden number in the less tries possible
-- Under `MESSAGE=`, add `SECRET=$(date +%s | rev | cut -c1-2)`
-> This **magic** command line `$(date +%s | rev | cut -c1-2)` will generate an **arbitrary number between `00` and `99`** (both included), don't try to understand it
-- In the line: `if [ "$ANSWER" = 42 ]`
-  - Replace `42` by `"$SECRET"`
-  - It should be like `if [ "$ANSWER" = "$SECRET" ]`
-- Replace the line `MESSAGE=...` by `MESSAGE="Hello at 42 ! What's the answer ?"`
-- You will add a clue:
-  - Add a line to check if it's greater or lower than the secret number
-  - Under `echo 'You shall not pass !'`, add the following:
+### Más O Menos
+> Implementarás el juego más o menos, el objetivo es encontrar un número oculto en el menor número de intentos posibles
+- Bajo `MESSAGE=`, añade `SECRETO=$(date +%s | rev | cut -c1-2)`
+> Esta línea de comando **mágica** `$(fecha +%s | rev | cut -c1-2)` generará un **número arbitrario entre `00` y `99`** (ambos incluidos), no intentes entenderlo
+- En la línea: `si [ "RESPUESTA" = 42 ]`
+  - Reemplace `42` por `"$SECRETO"`.
+  - Debería ser como `if [ "RESPUESTA" = "$SECRETO" ]`
+- Sustituye la línea `MESSAGE=...` por `MESSAGE="¡Hola a los 42! ¿Cuál es la respuesta?"`
+- Añadirá una pista:
+  - Añade una línea para comprobar si es mayor o menor que el número secreto
+  - Debajo de `echo 'You shall not pass !'`, añade lo siguiente:
 ```bash
-if [ "$SECRET" -gt "$ANSWER" ]
-then
-	echo "The secret number is greater !"
+if [ "$SECRETO" -gt "RESPUESTA" ]
+entonces
+	echo "¡El número secreto es mayor!"
 else
-	echo "The secret number is lower !"
+	echo "¡El número secreto es menor!"
 fi
 ```
-- You can save and try to play
-> You can play with a friend, tour per tour the frst one to guess it wins
-Your file should be like:
-```bash
-#!/usr/bin/env bash
-
-MESSAGE="Hello at 42 ! What's the answer ?"
-SECRET=$(date +%s | rev | cut -c1-2)
-while true
-do
-  echo $MESSAGE
-  read ANSWER
-
-  if [ "$ANSWER" = "$SECRET" ]
-  then
-    echo 'Welcome at 42 !'
-	exit 0
-  else
-    echo 'You shall not pass !'
-	if [ "$SECRET" -gt "$ANSWER" ]
-then
-	echo "The secret number is greater !"
-else
-	echo "The secret number is lower !"
-fi
-  fi
-done
-```
-
-### Counter
-> You will count how many try you do
-- Initialize the counter to `0`
-Before `while`:
-- Add `COUNT=0`
-After `read`:
-- Add `COUNT="$(($COUNT + 1))"`
-Just before `exit 0`
-- Add `echo "Score:    - $COUNT"`
-
-Your file should look like that
-```bash
-#!/usr/bin/env bash
-
-MESSAGE="Hello at 42 ! What's the password ?"
-SECRET=$(date +%s | rev | cut -c1-2)
-COUNT=0
-while true
-do
-  echo $MESSAGE
-  read ANSWER
-  COUNT="$(($COUNT + 1))"
-
-  if [ "$ANSWER" = "$SECRET" ]
-  then
-    echo 'Welcome at 42 !'
-	echo "Score:    - $COUNT"
-	exit 0
-  else
-    echo 'You shall not pass !'
-	if [ "$SECRET" -gt "$ANSWER" ]
-then
-	echo "The secret number is greater !"
-else
-	echo "The secret number is lower !"
-fi
-  fi
-done
-```
+- Puedes guardar e intentar jugar
+> Puedes jugar con un amigo, recorrido por recorrido el primero que gue
