@@ -87,7 +87,7 @@ echo MENSAJE
 ```bash
 #!/usr/bin/env bash
 
-MESSAGE='¡Hola 42!'
+MENSAJE='¡Hola 42!'
 echo MENSAJE
 leer RESPUESTA
 echo RESPUESTA
@@ -96,12 +96,12 @@ echo RESPUESTA
 
 ### No pasarás
 > Aprenderás a hacer tu programa inteligente
-- Actualiza el valor del MENSAJE para preguntar la edad del usuario: `echo '¡Hola 42! ¿Cuál es la respuesta?
+- Actualiza el valor del MENSAJE para preguntar la edad del usuario: `echo '¡Hola 42! ¿Cuál es la respuesta?'`
 - Añade estas líneas al final del archivo para comprobar si la edad es igual a 42
 > Ten cuidado con los caracteres especiales como los espacios y las comillas
 ```bash
-if [ "RESPUESTA" = 42 ]
-entonces
+if [ "$RESPUESTA" = 42 ]
+then
 	echo '¡Bienvenido a los 42!'
 else
 	echo '¡No pasarás!'
@@ -114,13 +114,13 @@ fi
 ```bash
  #!/usr/bin/env bash
 
-MESSAGE='¡Hola 42! ¿Cuál es la respuesta?
+MENSAJE='¡Hola 42! ¿Cuál es la respuesta?
 
 echo MENSAJE
 read RESPUESTA
 
 if [ "$RESPUESTA" = 42 ]
-entonces
+then
 	echo '¡Bienvenido a 42!'
 else
 	echo '¡No pasarás!'
@@ -129,7 +129,7 @@ fi
 
 ### De nuevo
 > Aprenderás a hacer un bucle para no escribir dos veces el mismo trozo de código
-- Añade entre `MESSAGE='¡Hola 42! ¿Cuál es la respuesta?'` y `echo MENSAJE` lo siguiente
+- Añade entre `MENSAJE='¡Hola 42! ¿Cuál es la respuesta?'` y `echo MENSAJE` lo siguiente
 ```bash
 while true
 do
@@ -139,19 +139,19 @@ Tu archivo debería ser así:
 ```bash
 #!/usr/bin/env bash
 
-MESSAGE="¡Hola 42! ¿Cuál es la respuesta?"
+MENSAJE="¡Hola 42! ¿Cuál es la respuesta?"
 while true
-hacer
+do
   echo $Mensaje
   leer RESPUESTA
 
-  if [ "RESPUESTA" = 42 ]
+  if [ "$RESPUESTA" = 42 ]
   entonces
     echo '¡Bienvenido a 42!'
   else
     echo '¡No pasarás!'
   fi
-hecho
+done
 ```
 
 - Ejecuta tu programa para probarlo, pulsa `Ctrl` y `C` para salir
@@ -162,12 +162,12 @@ hecho
 
 ### Más O Menos
 > Implementarás el juego más o menos, el objetivo es encontrar un número oculto en el menor número de intentos posibles
-- Bajo `MESSAGE=`, añade `SECRETO=$(date +%s | rev | cut -c1-2)`
+- Bajo `MENSAJE=`, añade `SECRETO=$(date +%s | rev | cut -c1-2)`
 > Esta línea de comando **mágica** `$(fecha +%s | rev | cut -c1-2)` generará un **número arbitrario entre `00` y `99`** (ambos incluidos), no intentes entenderlo
 - En la línea: `si [ "RESPUESTA" = 42 ]`
   - Reemplace `42` por `"$SECRETO"`.
   - Debería ser como `if [ "RESPUESTA" = "$SECRETO" ]`
-- Sustituye la línea `MESSAGE=...` por `MESSAGE="¡Hola a los 42! ¿Cuál es la respuesta?"`
+- Sustituye la línea `MENSAJE=...` por `MENSAJE="¡Hola a los 42! ¿Cuál es la respuesta?"`
 - Añadirá una pista:
   - Añade una línea para comprobar si es mayor o menor que el número secreto
   - Debajo de `echo 'You shall not pass !'`, añade lo siguiente:
