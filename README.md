@@ -163,7 +163,7 @@ done
 ### Más O Menos
 > Implementarás el juego más o menos, el objetivo es encontrar un número oculto en el menor número de intentos posibles
 - Bajo `MENSAJE=`, añade `SECRETO=$(date +%s | rev | cut -c1-2)`
-> Esta línea de comando **mágica** `$(fecha +%s | rev | cut -c1-2)` generará un **número arbitrario entre `00` y `99`** (ambos incluidos), no intentes entenderlo
+> Esta línea de comando **mágica** `$(date +%s | rev | cut -c1-2)` generará un **número arbitrario entre `00` y `99`** (ambos incluidos), no intentes entenderlo
 - En la línea: `if [ "$RESPUESTA" = 42 ]`
   - Reemplace `42` por `"$SECRETO"`.
   - Debería ser como `if [ "$RESPUESTA" = "$SECRETO" ]`
