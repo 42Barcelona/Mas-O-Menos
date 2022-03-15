@@ -13,6 +13,7 @@
 - Press `Command` + `Space`, then type `term` and click on the app you want to launch
 
 You should end up with something like this:
+![This is a Terminal](./Screenshot 2022-03-15 at 17.38.08.png)
 
 
 ## Create & Edit a file
