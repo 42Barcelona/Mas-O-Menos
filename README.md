@@ -81,7 +81,7 @@ echo $MENSAJE
 
 ### Habla conmigo
 > Harás que tu programa pueda preguntar algo al usuario y obtener una respuesta
-- Añade una línea al final del archivo: `read ANSWER`
+- Añade una línea al final del archivo: `read RESPUESTA`
 - Y otra para mostrar la respuesta: `echo $RESPUESTA`
 - Tu archivo debería tener este aspecto
 ```bash
