@@ -170,7 +170,7 @@ done
 - Sustituye la línea `MENSAJE=...` por `MENSAJE="¡Hola a los 42! ¿Cuál es la respuesta?"`
 - Añadirá una pista:
   - Añade una línea para comprobar si es mayor o menor que el número secreto
-  - Debajo de `echo $'You shall not pass !'`, añade lo siguiente:
+  - Debajo de `echo 'You shall not pass !'`, añade lo siguiente:
 ```bash
 if [ "$SECRETO" -gt "$RESPUESTA" ]
 then
