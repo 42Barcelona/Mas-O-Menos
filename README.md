@@ -20,7 +20,8 @@ You should end up with something like this:
 > In the terminal, we are using this syntax: `command --options arguments` 
 - Let's use the command `nano`, which is a basic text editor
 - We will give as arguments the name of the file we want to create `mas_o_menos.sh`
-- The full command line will look like that: `nano mas_o_menos.sh`
+- The full command line will look like that
+![This is a command line](./assets/shot_2.png)
 - Press enter to execute it
 
 ### Use Nano
