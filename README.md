@@ -167,7 +167,7 @@ done
 - In the line: `if [ "$ANSWER" = 42 ]`
   - Replace `42` by `"$SECRET"`
   - It should be like `if [ "$ANSWER" = "$SECRET" ]`
-- Replace the line `MESSAGE=...` by `MESSAGE="Hello at 42 ! What's the password ?"`
+- Replace the line `MESSAGE=...` by `MESSAGE="Hello at 42 ! What's the answer ?"`
 - You will add a clue:
   - Add a line to check if it's greater or lower than the secret number
   - Under `echo 'You shall not pass !'`, add the following:
@@ -181,3 +181,69 @@ fi
 ```
 - You can save and try to play
 > You can play with a friend, tour per tour the frst one to guess it wins
+Your file should be like:
+```bash
+#!/usr/bin/env bash
+
+MESSAGE="Hello at 42 ! What's the answer ?"
+SECRET=$(date +%s | rev | cut -c1-2)
+while true
+do
+  echo $MESSAGE
+  read ANSWER
+
+  if [ "$ANSWER" = "$SECRET" ]
+  then
+    echo 'Welcome at 42 !'
+	exit 0
+  else
+    echo 'You shall not pass !'
+	if [ "$SECRET" -gt "$ANSWER" ]
+then
+	echo "The secret number is greater !"
+else
+	echo "The secret number is lower !"
+fi
+  fi
+done
+```
+
+### Counter
+> You will count how many try you do
+- Initialize the counter to `0`
+Before `while`:
+- Add `COUNT=0`
+After `read`:
+- Add `COUNT="$(($COUNT + 1))"`
+Just before `exit 0`
+- Add `echo "Score:    - $COUNT"`
+
+Your file should look like that
+```bash
+#!/usr/bin/env bash
+
+MESSAGE="Hello at 42 ! What's the password ?"
+SECRET=$(date +%s | rev | cut -c1-2)
+COUNT=0
+while true
+do
+  echo $MESSAGE
+  read ANSWER
+  COUNT="$(($COUNT + 1))"
+
+  if [ "$ANSWER" = "$SECRET" ]
+  then
+    echo 'Welcome at 42 !'
+	echo "Score:    - $COUNT"
+	exit 0
+  else
+    echo 'You shall not pass !'
+	if [ "$SECRET" -gt "$ANSWER" ]
+then
+	echo "The secret number is greater !"
+else
+	echo "The secret number is lower !"
+fi
+  fi
+done
+```
