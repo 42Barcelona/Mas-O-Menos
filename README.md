@@ -66,7 +66,7 @@ Es el momento de ver lo que has hecho
 
 Tu archivo es ahora ejecutable, puedes ejecutarlo escribiendo `./mas_o_menos.sh`
 
-### Varaiable
+### Variable
 > Vas a modificar tu archivo, para imprimir en la terminal el contenido de la variable MENSAJE, podrás cambiar el mensaje impreso cambiando el valor de la variable
 - En su fichero, sustituya `'¡Hola 42!'` por `MENSAJE`.
 - Añade una línea justo encima para establecer el valor de la variable MENSAJE: `MENSAJE='¡Hola 42!'`
