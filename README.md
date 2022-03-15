@@ -12,6 +12,9 @@
 > This step is for MacOS users only
 - Press `Command` + `Space`, then type `term` and click on the app you want to launch
 
+You should end up with something like this:
+
+
 ## Create & Edit a file
 > In the terminal, we are using this syntax: `command --options arguments` 
 - Let's use the command `nano`, which is a basic text editor
