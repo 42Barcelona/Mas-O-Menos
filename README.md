@@ -96,7 +96,7 @@ echo $ANSWER
 
 ### You shall not pass
 > You will learn how to make your program smart
-- Update the MESSAGE value to ask the age of the user: `echo 'Hello 42 ! How old are you ?'`
+- Update the MESSAGE value to ask the age of the user: `echo 'Hello 42 ! What's the answer ?'`
 - Add thoses lines at the bottom of the file to check if the age is equal to 42
 > Be careful about special characters like spaces and the quotes
 ```bash
@@ -114,7 +114,7 @@ fi
  ```bash
  #!/usr/bin/env bash
 
-MESSAGE='Hello 42 ! How old are you ?'
+MESSAGE='Hello 42 ! What's the answer ?'
 
 echo $MESSAGE
 read ANSWER
@@ -129,7 +129,7 @@ fi
 
 ### Again
 > You will learn how to do a loop to not write two times the same piece of code
-- Add between `MESSAGE='Hello 42 ! How old are you ?'` and `echo $MESSAGE` the following
+- Add between `MESSAGE='Hello 42 ! What's the answer ?'` and `echo $MESSAGE` the following
 ```bash
 while true
 do
@@ -139,7 +139,7 @@ Your file should be like that:
 ```bash
 #!/usr/bin/env bash
 
-MESSAGE='Hello 42 ! How old are you ?'
+MESSAGE="Hello 42 ! What's the answer ?"
 while true
 do
   echo $MESSAGE
