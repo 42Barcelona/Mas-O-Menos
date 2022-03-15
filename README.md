@@ -27,7 +27,9 @@ You should end up with something like this:
 ### Use Nano
 - Type whatever you want
 - Press `Ctrl` + `x` to save your file
+![This is how to save](./assets/shot_3.png)
 - Press `y` to confirm
+![This is how to confirm](./assets/shot_4.png)
 - Press `Enter` to exit
 
 > Well done, you did your first file !
