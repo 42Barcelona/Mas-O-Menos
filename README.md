@@ -165,17 +165,17 @@ done
 
 ### Más O Menos
 > Implementarás el juego más o menos, el objetivo es encontrar un número oculto en el menor número de intentos posibles
-- Bajo `MENSAJE=`, añade `SECRETOO=$(date +%s | rev | cut -c1-2)`
+- Bajo `MENSAJE=`, añade `SECRETO=$(date +%s | rev | cut -c1-2)`
 > Esta línea de comando **mágica** `$(date +%s | rev | cut -c1-2)` generará un **número arbitrario entre `00` y `99`** (ambos incluidos), no intentes entenderlo
 - En la línea: `if [ "$RESPUESTA" = 42 ]`
-  - Reemplace `42` por `"$SECRETOO"`.
-  - Debería ser como `if [ "$RESPUESTA" = "$SECRETOO" ]`
+  - Reemplace `42` por `"$SECRETO"`.
+  - Debería ser como `if [ "$RESPUESTA" = "$SECRETO" ]`
 - Sustituye la línea `MENSAJE=...` por `MENSAJE="¡Hola a los 42! ¿Cuál es la respuesta?"`
 - Añadirá una pista:
   - Añade una línea para comprobar si es mayor o menor que el número secreto
   - Debajo de `echo 'You shall not pass !'`, añade lo siguiente:
 ```bash
-if [ "$SECRETOO" -gt "$RESPUESTA" ]
+if [ "$SECRETO" -gt "$RESPUESTA" ]
 then
 	echo "¡El número secreto es mayor!"
 else
