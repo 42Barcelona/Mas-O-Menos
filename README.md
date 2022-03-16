@@ -189,7 +189,7 @@ Tu archivo debria ser como eso:
 ```bash
 #!/usr/bin/env bash
 
-MENSAJE='¡Hola 42! ¿Cuál es la respuesta?
+MENSAJE='¡Hola 42! ¿Cuál es la respuesta?'
 SECRETO=$(date +%s | rev | cut -c1-2)
 while true
 do
@@ -226,7 +226,7 @@ Tu archivo debria ser asi:
 ```bash
 #!/usr/bin/env bash
 
-MENSAJE='¡Hola 42! ¿Cuál es la respuesta?
+MENSAJE='¡Hola 42! ¿Cuál es la respuesta?'
 SECRETO=$(date +%s | rev | cut -c1-2)
 CUENTO=0
 while true
