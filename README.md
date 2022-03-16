@@ -146,10 +146,10 @@ do
   read RESPUESTA
 
   if [ "$RESPUESTA" = 42 ]
-  thens
-    echo $'¡Bienvenido a 42!'
+  then
+    echo '¡Bienvenido a 42!'
   else
-    echo $'¡No pasarás!'
+    echo '¡No pasarás!'
   fi
 done
 ```
