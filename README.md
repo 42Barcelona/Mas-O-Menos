@@ -189,7 +189,7 @@ Tu archivo debria ser como eso:
 ```bash
 #!/usr/bin/env bash
 
-MENSAJE="Hello at 42 ! What's the answer ?"
+MENSAJE='¡Hola 42! ¿Cuál es la respuesta?
 SECRETO=$(date +%s | rev | cut -c1-2)
 while true
 do
@@ -198,56 +198,56 @@ do
 
   if [ "$RESPUESTA" = "$SECRETO" ]
   then
-    echo 'Welcome at 42 !'
+	echo '¡Bienvenido a 42!'
 	exit 0
   else
-    echo 'You shall not pass !'
+    echo '¡No pasarás!'
 	if [ "$SECRETO" -gt "$RESPUESTA" ]
 then
-	echo "The secret number is greater !"
+	echo "¡El número secreto es mayor!"
 else
-	echo "The secret number is lower !"
+	echo "¡El número secreto es menor!"
 fi
   fi
 done
 ```
 
 ### Counter
-> You will count how many try you do
-- Initialize the counter to `0`
-Before `while`:
-- Add `COUNT=0`
-After `read`:
-- Add `COUNT="$(($COUNT + 1))"`
-Just before `exit 0`
-- Add `echo "Score:    - $COUNT"`
+> Vas a cuentar la veces que usas
+- Defina la valor del cuento a `0`
+Antes `while`:
+- añada `CUENTO=0`
+despues `read`:
+- añada `CUENTO="$(($CUENTO + 1))"`
+Antes `exit 0`
+- añada `echo "Score:    - $CUENTO"`
 
-Your file should look like that
+Tu archivo debria ser asi:
 ```bash
 #!/usr/bin/env bash
 
-MENSAJE="Hello at 42 ! What's the password ?"
+MENSAJE='¡Hola 42! ¿Cuál es la respuesta?
 SECRETO=$(date +%s | rev | cut -c1-2)
-COUNT=0
+CUENTO=0
 while true
 do
   echo $MENSAJE
   read RESPUESTA
-  COUNT="$(($COUNT + 1))"
+  CUENTO="$(($CUENTO + 1))"
 
   if [ "$RESPUESTA" = "$SECRETO" ]
   then
-    echo 'Welcome at 42 !'
-	echo "Score:    - $COUNT"
+	echo '¡Bienvenido a 42!'
+	echo "Score:    - $CUENTO"
 	exit 0
   else
-    echo 'You shall not pass !'
+    echo '¡No pasarás!'
 	if [ "$SECRETO" -gt "$RESPUESTA" ]
-then
-	echo "The secret number is greater !"
-else
-	echo "The secret number is lower !"
-fi
+	then
+	  echo "¡El número secreto es mayor!"
+    else
+	  echo "¡El número secreto es menor!"
+    fi
   fi
 done
 ```
