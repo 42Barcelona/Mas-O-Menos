@@ -165,17 +165,17 @@ done
 
 ### Más O Menos
 > Implementarás el juego más o menos, el objetivo es encontrar un número oculto en el menor número de intentos posibles
-- Bajo `MENSAJE=`, añade `SECRETO=$(date +%s | rev | cut -c1-2)`
+- Bajo `MENSAJE=`, añade `SECRETOO=$(date +%s | rev | cut -c1-2)`
 > Esta línea de comando **mágica** `$(date +%s | rev | cut -c1-2)` generará un **número arbitrario entre `00` y `99`** (ambos incluidos), no intentes entenderlo
 - En la línea: `if [ "$RESPUESTA" = 42 ]`
-  - Reemplace `42` por `"$SECRETO"`.
-  - Debería ser como `if [ "$RESPUESTA" = "$SECRETO" ]`
+  - Reemplace `42` por `"$SECRETOO"`.
+  - Debería ser como `if [ "$RESPUESTA" = "$SECRETOO" ]`
 - Sustituye la línea `MENSAJE=...` por `MENSAJE="¡Hola a los 42! ¿Cuál es la respuesta?"`
 - Añadirá una pista:
   - Añade una línea para comprobar si es mayor o menor que el número secreto
   - Debajo de `echo 'You shall not pass !'`, añade lo siguiente:
 ```bash
-if [ "$SECRETO" -gt "$RESPUESTA" ]
+if [ "$SECRETOO" -gt "$RESPUESTA" ]
 then
 	echo "¡El número secreto es mayor!"
 else
@@ -183,4 +183,71 @@ else
 fi
 ```
 - Puedes guardar e intentar jugar
-> Puedes jugar con un amigo, recorrido por recorrido el primero que gue
+> Puedes jugar con un amigo, recorrido por recorrido el primero que lo devina gagna
+
+Tu archivo debria ser como eso:
+```bash
+#!/usr/bin/env bash
+
+MENSAJE="Hello at 42 ! What's the answer ?"
+SECRETO=$(date +%s | rev | cut -c1-2)
+while true
+do
+  echo $MENSAJE
+  read RESPUESTA
+
+  if [ "$RESPUESTA" = "$SECRETO" ]
+  then
+    echo 'Welcome at 42 !'
+	exit 0
+  else
+    echo 'You shall not pass !'
+	if [ "$SECRETO" -gt "$RESPUESTA" ]
+then
+	echo "The secret number is greater !"
+else
+	echo "The secret number is lower !"
+fi
+  fi
+done
+```
+
+### Counter
+> You will count how many try you do
+- Initialize the counter to `0`
+Before `while`:
+- Add `COUNT=0`
+After `read`:
+- Add `COUNT="$(($COUNT + 1))"`
+Just before `exit 0`
+- Add `echo "Score:    - $COUNT"`
+
+Your file should look like that
+```bash
+#!/usr/bin/env bash
+
+MENSAJE="Hello at 42 ! What's the password ?"
+SECRETO=$(date +%s | rev | cut -c1-2)
+COUNT=0
+while true
+do
+  echo $MENSAJE
+  read RESPUESTA
+  COUNT="$(($COUNT + 1))"
+
+  if [ "$RESPUESTA" = "$SECRETO" ]
+  then
+    echo 'Welcome at 42 !'
+	echo "Score:    - $COUNT"
+	exit 0
+  else
+    echo 'You shall not pass !'
+	if [ "$SECRETO" -gt "$RESPUESTA" ]
+then
+	echo "The secret number is greater !"
+else
+	echo "The secret number is lower !"
+fi
+  fi
+done
+```
