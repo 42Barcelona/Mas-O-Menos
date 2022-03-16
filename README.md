@@ -116,7 +116,7 @@ Tu archivo debería tener el siguiente aspecto
 ```bash
 #!/usr/bin/env bash
 
-MENSAJE='¡Hola 42! ¿Cuál es la respuesta?
+MENSAJE='¡Hola 42! ¿Cuál es la respuesta?'
 
 echo $MENSAJE
 read RESPUESTA
