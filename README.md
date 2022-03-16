@@ -70,7 +70,8 @@ Tu archivo es ahora ejecutable, puedes ejecutarlo escribiendo `./mas_o_menos.sh`
 > Vas a modificar tu archivo, para imprimir en la terminal el contenido de la variable MENSAJE, podrás cambiar el mensaje impreso cambiando el valor de la variable
 - En su fichero, sustituya `'¡Hola 42!'` por `MENSAJE`.
 - Añade una línea justo encima para establecer el valor de la variable MENSAJE: `MENSAJE='¡Hola 42!'`
-- Su archivo para que coincida con el siguiente:
+
+Su archivo para que coincida con el siguiente:
 ```bash
 #!/usr/bin/env bash
 
@@ -83,7 +84,8 @@ echo $MENSAJE
 > Harás que tu programa pueda preguntar algo al usuario y obtener una respuesta
 - Añade una línea al final del archivo: `read RESPUESTA`
 - Y otra para mostrar la respuesta: `echo $RESPUESTA`
-- Tu archivo debería tener este aspecto
+
+Tu archivo debería tener este aspecto
 ```bash
 #!/usr/bin/env bash
 
@@ -110,7 +112,7 @@ fi
 
 - Guarda y prueba, también puedes eliminar la línea: `echo $RESPUESTA`
 
- Tu archivo debería tener el siguiente aspecto
+Tu archivo debería tener el siguiente aspecto
 ```bash
 #!/usr/bin/env bash
 
@@ -135,6 +137,7 @@ while true
 do
 ```
 - Y después de la línea `fi`, añade `done`
+
 Tu archivo debería ser así:
 ```bash
 #!/usr/bin/env bash
